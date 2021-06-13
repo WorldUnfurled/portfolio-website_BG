@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Source+Sans+Pro:wght@200&display=swap');
 
 nav {
     position: fixed;
     height: 8vh;
     width: 100%;
-    background-color: green;
+    background-color: #600FFF;
     display: flex;
     align-items: center;
 }
@@ -22,6 +23,10 @@ nav ul li {
     border: 5px;
     font-family: 'Source Sans Pro';
     font-weight: bold;
+}
+
+nav ul li a {
+    color: white;
 }
 
 a {
@@ -48,4 +53,8 @@ footer {
     height: 100vh;
     width: 100%;
     background-color: blue;  
+}
+
+.logo {
+    margin-top: 9px;
 }

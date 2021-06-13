@@ -1,6 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Source+Sans+Pro:wght@200&display=swap');
+/* IMPORTS */
 
+/* Logo text font */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+/* Nav menu font */
+@import url('https://fonts.googleapis.com/css2?family=Fondamento&display=swap');
+
+/* SELECTORS */
+/* Direct */
 nav {
     position: fixed;
     height: 8vh;
@@ -21,7 +27,7 @@ nav ul li {
     padding: 20px;
     margin: 5px;
     border: 5px;
-    font-family: 'Source Sans Pro';
+    font-family: 'Fondamento', cursive;
     font-weight: bold;
 }
 
@@ -37,6 +43,20 @@ footer {
     background-color: red;
 }
 
+/* Classes */
+.logo {
+    margin-top: 9px;
+    margin-left: 10px;
+}
+
+.logo-text {
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+}
+
+/* IDs */
 #bio {
     height: 100vh;
     width: 100%;
@@ -53,8 +73,4 @@ footer {
     height: 100vh;
     width: 100%;
     background-color: blue;  
-}
-
-.logo {
-    margin-top: 9px;
 }

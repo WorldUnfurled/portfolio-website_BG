@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+
 nav {
     position: fixed;
     height: 8vh;
@@ -18,6 +20,8 @@ nav ul li {
     padding: 20px;
     margin: 5px;
     border: 5px;
+    font-family: 'Source Sans Pro';
+    font-weight: bold;
 }
 
 a {

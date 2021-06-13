@@ -48,6 +48,12 @@ header {
     background-size: cover;
 }
 
+section > h1 {
+    text-align: center;
+    font-size: 40px;
+    padding: 15px;
+}
+
 footer {
     background-color: #600FFF;
     text-align: center;

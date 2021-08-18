@@ -4,18 +4,38 @@
 /* Nav menu font */
 @import url('https://fonts.googleapis.com/css2?family=Fondamento&display=swap');
 
+:root {
+    --nav-color: rgba(10, 90, 255, 1);
+    --nav-color-alpha: rgba(10, 90, 255, 0.3);
+    --nav-font-size: 30px;
+    --nav-box-shadow: 0px 0px 9px 3px rgba(41, 41, 41, 0.25);
+
+    --header-dark-color: rgba(3, 36, 53, 1);
+    --header-dark-color-alpha: rgba(3, 36, 53, 0.9);
+    --header-linear-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(3, 36, 53, 0.3) 50%, rgba(3, 36, 53, 1) 100%), url('./images/blue-forest-minimal.jpg') no-repeat;
+
+    --bio-linear-gradient: linear-gradient(to bottom, #032435, #053043, #073c52, #094a60, #0b576f);
+
+    --work-linear-gradient: linear-gradient(to bottom, #0b576f, #095b72, #076075, #076478, #08697a);
+
+    --contact-linear-gradient: linear-gradient(to bottom, #08697a, #056b79, #046d78, #066f77, #0b7175);
+
+    --ds-font: 'Dancing Script', 'cursive'
+}
+
 /* SELECTORS */
 /* Direct */
 nav {
     position: fixed;
     height: 8vh;
     width: 100%;
-    background-color: rgba(10,90,255,1);
+    background-color: var(--nav-color);
     display: flex;
     align-items: center;
     justify-content: center;
     top: 0;
-    box-shadow: 0px 0px 9px 3px rgba(41,41,41,.25);
+    box-shadow: var(--nav-box-shadow);
+    z-index: 1000;
 }
 
 nav ul {
@@ -29,9 +49,9 @@ nav ul li {
     padding: 20px;
     margin: 5px;
     border: 5px;
-    font-family: 'Fondamento', 'cursive';
+    font-family: var(--ds-font);
     font-weight: bold;
-    font-size: 25px;
+    font-size: var(--nav-font-size);
 }
 
 nav ul li a {
@@ -45,8 +65,7 @@ a {
 header {
     height: 100vh;
     width: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(3,36,53, 0.3) 50%, rgba(3,36,53,1) 100%), url('./images/blue-forest-minimal.jpg') no-repeat;
-    /* background-image: url(./images/blue-forest-minimal.jpg); */
+    background: var(--header-linear-gradient);
     background-position: center;
     background-size: cover;
 }
@@ -59,10 +78,10 @@ section > h1 {
 }
 
 footer {
-    background-color: rgba(10,90,255,1);
+    background-color: var(--nav-color);
     text-align: center;
-    font-size: 25px;
-    font-family: 'Fondamento', 'cursive';
+    font-size: var(--nav-font-size);
+    font-family: var(--ds-font);
     color: white;
     padding: 10px;
 }
@@ -74,9 +93,9 @@ footer {
 }
 
 .logo-text {
-    font-family: 'Dancing Script', 'cursive';
+    font-family: var(--ds-font);
     font-weight: bold;
-    font-size: 25px;
+    font-size: var(--nav-font-size);
     color: white;
 }
 /* ----------------------------------------------------------------- */
@@ -85,23 +104,48 @@ footer {
 #bio {
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(to bottom, #032435, #053043, #073c52, #094a60, #0b576f);
+    background-image: var(--bio-linear-gradient);
 }
 
 #work {
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(to bottom, #0b576f, #095b72, #076075, #076478, #08697a);
+    background-image: var(--work-linear-gradient);
 }
 
 #contact {
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(to bottom, #08697a, #056b79, #046d78, #066f77, #0b7175);
+    background-image: var(--contact-linear-gradient);
 }
 
-#profile > img {
-    
+#top-header-rect {
+    position: absolute;
+    width: 800px;
+    height: 500px;
+    background-color: var(--nav-color-alpha);
+    left: 47%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+}
+
+#bottom-header-rect {
+    position: absolute;
+    width: 800px;
+    height: 500px;
+    background-color: var(--header-dark-color-alpha);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#bhr-h1 {
+    position: absolute;
+    font-size: 70px;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* RESPONSIVENESS*/

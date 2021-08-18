@@ -10,10 +10,11 @@ nav {
     position: fixed;
     height: 8vh;
     width: 100%;
-    background-color: #600FFF;
+    background-color: rgba(10,90,255,1);
     display: flex;
     align-items: center;
     top: 0;
+    box-shadow: 0px 0px 9px 3px rgba(41,41,41,.25);
 }
 
 nav ul {
@@ -43,21 +44,25 @@ a {
 header {
     height: 100vh;
     width: 100%;
-    background-image: url(./images/blue-forest-minimal.jpg);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(3,36,53, 0.3) 50%, rgba(3,36,53,1) 100%), url('./images/blue-forest-minimal.jpg') no-repeat;
+    /* background-image: url(./images/blue-forest-minimal.jpg); */
     background-position: center;
     background-size: cover;
 }
 
 section > h1 {
     text-align: center;
-    font-size: 40px;
+    color: white;
+    font-size: 80px;
     padding: 15px;
 }
 
 footer {
-    background-color: #600FFF;
+    background-color: rgba(10,90,255,1);
     text-align: center;
     font-size: 25px;
+    font-family: 'Fondamento', 'cursive';
+    color: white;
     padding: 10px;
 }
 
@@ -79,19 +84,23 @@ footer {
 #bio {
     height: 100vh;
     width: 100%;
-    background-color: white;
+    background-image: linear-gradient(to bottom, #032435, #053043, #073c52, #094a60, #0b576f);
 }
 
 #work {
     height: 100vh;
     width: 100%;
-    background-color: white; 
+    background-image: linear-gradient(to bottom, #0b576f, #095b72, #076075, #076478, #08697a);
 }
 
 #contact {
     height: 100vh;
     width: 100%;
-    background-color: white;
+    background-image: linear-gradient(to bottom, #08697a, #056b79, #046d78, #066f77, #0b7175);
+}
+
+#profile > img {
+    
 }
 
 /* RESPONSIVENESS*/

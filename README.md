@@ -14,6 +14,8 @@ Here are some highlights:
 * Added logo
 * Added better about me section with picture
 
+![screenshot](assets/images/port_website.png)
+
 ## E-signature
 
 Brooks Gunn :)

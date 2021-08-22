@@ -1,8 +1,7 @@
 /* IMPORTS */
 /* Logo text font */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-/* Nav menu font */
-@import url('https://fonts.googleapis.com/css2?family=Fondamento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 :root {
     --nav-color: rgba(10, 90, 255, 1);
@@ -20,7 +19,11 @@
 
     --contact-linear-gradient: linear-gradient(to bottom, #08697a, #056b79, #046d78, #066f77, #0b7175);
 
-    --ds-font: 'Dancing Script', 'cursive'
+    --ds-font: 'Dancing Script', 'cursive';
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* SELECTORS */
@@ -107,10 +110,53 @@ footer {
     background-image: var(--bio-linear-gradient);
 }
 
+#bio > h1 {
+    padding-top: 200px;
+}
+
 #work {
     height: 100vh;
     width: 100%;
     background-image: var(--work-linear-gradient);
+}
+
+#work > h1 {
+    padding-top: 200px;
+}
+
+/* CARD CONTAINER: Specifies template for grid which determines how cards will be laid out; Specifies gaps in between the cards and makes cards adjacent to one another 50% of the size of the 100% big card (thumb-1) */
+#card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "thumb-1 thumb-1"
+        "thumb-2 thumb-3"
+        "thumb-4 thumb-5";
+    column-gap: 10px;
+    row-gap: 10px;
+    padding: 20px;
+}
+
+/* CARDS: Each card is assigned to a grid area in the template and has an image background that is centered and does not tile (could probably be done in less lines with JS?)*/
+#card-1 {
+    grid-area: thumb-1;
+}
+
+#card-2 {
+    grid-area: thumb-2;
+}
+
+#card-3 {
+    grid-area: thumb-3;
+}
+
+#card-4 {
+    grid-area: thumb-4;
+}
+
+#card-5 {
+    grid-area: thumb-5;
 }
 
 #contact {
@@ -119,9 +165,29 @@ footer {
     background-image: var(--contact-linear-gradient);
 }
 
+#contact > h1 {
+    padding-top: 200px;
+}
+
+#contact ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    align-items: center;
+}
+
+#contact ul li {
+    font-size: 50px;
+}
+
+#contact ul li {
+    text-decoration: none;
+    color: white;
+}
+
 #top-header-rect {
     position: absolute;
-    width: 800px;
+    width: 40vw;
     height: 500px;
     background-color: var(--nav-color-alpha);
     left: 47%;
@@ -131,7 +197,7 @@ footer {
 
 #bottom-header-rect {
     position: absolute;
-    width: 800px;
+    width: 40vw;
     height: 500px;
     background-color: var(--header-dark-color-alpha);
     left: 50%;
@@ -139,13 +205,73 @@ footer {
     transform: translate(-50%, -50%);
 }
 
-#bhr-h1 {
-    position: absolute;
-    font-size: 70px;
+#header-text-box > h1 {
+    padding-left: 30px;
+    font-size: 90px;
     color: white;
+}
+
+#header-text-box > h2 {
+    padding: 5px 0px 10px 80px;
+    font-size: 60px;
+    color: white;
+}
+
+#header-text-box > p {
+    padding: 5px 0px 10px 80px;
+    font-size: 60px;
+    color: white;
+}
+
+#bio-rect {
+    /* border: 1px solid red; */
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
     left: 50%;
-    top: 50%;
+    top: 40%;
     transform: translate(-50%, -50%);
+    align-items: center;
+}
+
+#bio-img {
+    position: relative;
+    width: 300px;
+    height: auto;
+    float: left;
+    border: 5px solid var(--header-dark-color);
+    align-self: center;
+}
+
+#bio-rect > p {
+    float: left;
+    font-size: 1.85rem;
+    color: white;
+    width: 400px;
+    padding-left: 20px;
+    height: 391px;
+}
+
+#work-rect {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    height: 700px;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+}
+
+#work-img {
+    width: 700px;
+    height: auto;
+    align-self: center;
 }
 
 /* RESPONSIVENESS*/
@@ -159,4 +285,177 @@ footer {
 
 @media screen and (max-width: 576px) {
 
+}
+
+.big-card { /* Dimension and border specifications for large card */
+    width: 700px;
+}
+
+.small-card { /* Dimension and border specifications for small cards */
+    width: 350px;
+}
+
+.card-content-1::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(./images/coinbased.PNG);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(50%);
+    transition: 0.3s;
+}
+
+.card-content-1:hover::before {
+    cursor: pointer;
+    filter: brightness(100%);
+}
+
+.card-content-1 { /* Card text in card container flexed and moved to cross axis end */
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.card-content-1 p { /* Specifies dimensions, font size, and background color for actual card text */
+    position: relative;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.card-content-2::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(./images/budget_tracker.PNG);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(50%);
+    transition: 0.3s;
+}
+
+.card-content-2:hover::before {
+    cursor: pointer;
+    filter: brightness(100%);
+}
+
+.card-content-2 { /* Card text in card container flexed and moved to cross axis end */
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.card-content-2 p { /* Specifies dimensions, font size, and background color for actual card text */
+    position: relative;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.card-content-3::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(./images/fanfiction.PNG);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(50%);
+    transition: 0.3s;
+}
+
+.card-content-3:hover::before {
+    cursor: pointer;
+    filter: brightness(100%);
+}
+
+.card-content-3 { /* Card text in card container flexed and moved to cross axis end */
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.card-content-3 p { /* Specifies dimensions, font size, and background color for actual card text */
+    position: relative;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.card-content-4::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(./images/employee-tracker.PNG);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(50%);
+    transition: 0.3s;
+}
+
+.card-content-4:hover::before {
+    cursor: pointer;
+    filter: brightness(100%);
+}
+
+.card-content-4 { /* Card text in card container flexed and moved to cross axis end */
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.card-content-4 p { /* Specifies dimensions, font size, and background color for actual card text */
+    position: relative;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.card-content-5::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(./images/password_gen.PNG);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(50%);
+    transition: 0.3s;
+}
+
+.card-content-5:hover::before {
+    cursor: pointer;
+    filter: brightness(100%);
+}
+
+.card-content-5 { /* Card text in card container flexed and moved to cross axis end */
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.card-content-5 p { /* Specifies dimensions, font size, and background color for actual card text */
+    position: relative;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5em;
+    cursor: pointer;
 }
